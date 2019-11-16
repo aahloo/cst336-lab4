@@ -1,21 +1,56 @@
-const express = require("express");
-const app = express();
-app.engine('html', require("ejs").renderFile);  // use EJS to render HTML files
 
-// all static files are included in a folder called “public” but you can use a different folder name
-app.use(express.static("public"));
+const express = require('express'); // import Express lib 
+const app = express(); // reference provides access to Express methods -- name of function matches name of const above
 
-// define multiple routes
-app.get("/", function(req, res) {
-    res.render("index.html");
+app.engine('html', require('ejs').renderFile);
+app.use(express.static("public")); // specify the external src folder
+
+/* Creates the root route, which sends response when root folder of website is requested */
+
+// NOTE: all html files must be placed in /views
+
+app.get("/", function(request, response){
+  response.render("index.html"); 
 });
 
-app.get("/mercury", function(req, res) {
+app.get("/sun.html", function(request, response){
+  response.render("sun.html"); 
+});
+
+app.get("/mercury.html", function(req, res) {
     res.render("mercury.html");
 });
 
-app.get("/venus", function(req, res) {
+app.get("/venus.html", function(req, res) {
     res.render("venus.html");
+});
+
+app.get("/earth.html", function(req, res) {
+    res.render("earth.html");
+});
+
+app.get("/mars.html", function(req, res) {
+    res.render("mars.html");
+});
+
+app.get("/jupiter.html", function(req, res) {
+    res.render("jupiter.html");
+});
+
+app.get("/saturn.html", function(req, res) {
+    res.render("saturn.html");
+});
+
+app.get("/uranus.html", function(req, res) {
+    res.render("uranus.html");
+});
+
+app.get("/neptune.html", function(req, res) {
+    res.render("neptune.html");
+});
+
+app.get("/p9.html", function(req, res) {
+    res.render("p9.html");
 });
 
 // server listener for Heroku
@@ -29,3 +64,6 @@ app.listen("8080", "127.0.0.1", function() {
     console.log("Express Server is running...");
 });
 */
+
+
+

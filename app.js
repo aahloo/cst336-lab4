@@ -9,12 +9,12 @@ app.use(express.static("public")); // specify the external src folder
 
 // NOTE: all html files must be placed in /views
 
-app.get("/", function(request, response){
-  response.render("index.html"); 
+app.get("/", function(req, res){
+  res.render("index.html"); 
 });
 
-app.get("/sun.html", function(request, response){
-  response.render("sun.html"); 
+app.get("/sun.html", function(req, res){
+  res.render("sun.html"); 
 });
 
 app.get("/mercury.html", function(req, res) {

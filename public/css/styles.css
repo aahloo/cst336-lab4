@@ -59,3 +59,11 @@ footer {
     color: #63bff7;
     text-align: center;
 }
+
+a {
+  color: white;
+}
+
+a: hover {
+  color: orange;
+}
